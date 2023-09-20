@@ -5,9 +5,10 @@ interface IProps {
   name: string;
   numMembers: number;
   onClick?: () => void;
+  selected?: boolean;
 }
 
-const ChatRoomItem: FC<IProps> = ({ numMembers, name, onClick }) => {
+const ChatRoomItem: FC<IProps> = ({ numMembers, name, onClick, selected }) => {
   return (
     <Flex
       onClick={onClick}
@@ -16,6 +17,7 @@ const ChatRoomItem: FC<IProps> = ({ numMembers, name, onClick }) => {
       cursor="pointer"
       borderRadius="5px"
       _hover={{ bg: '#ffffff22' }}
+      bg={selected ? '#ffffff22' : 'initial'}
       p="0.5em">
       <Avatar name={name} size="md" mr="0.5em" />
       <Box>

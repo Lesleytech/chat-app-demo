@@ -14,6 +14,7 @@ import ChatRoomItem from './ChatRoomItem';
 
 const ChatRooms = () => {
   const { currentUser } = useAppSelector((state) => state.auth);
+  const { selectedRoomId } = useAppSelector((state) => state.chat);
 
   const dispatch = useDispatch();
 
@@ -53,6 +54,7 @@ const ChatRooms = () => {
                 numMembers={room.chatRoomUsers.length}
                 key={room.id}
                 onClick={() => dispatch(chatActions.setSelectedRoomId(room.id))}
+                selected={room.id === selectedRoomId}
               />
             ))}
           </VStack>
