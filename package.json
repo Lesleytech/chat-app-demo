@@ -49,7 +49,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "json-server --watch db.json --port 5123"
+    "serve:api": "json-server --watch db.json --port 5123",
+    "start:prod": "serve build/ -s -p 3123"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +71,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/store": "^2.0.2",
     "@types/uuid": "^9.0.4",
     "eslint": "^8.49.0",
