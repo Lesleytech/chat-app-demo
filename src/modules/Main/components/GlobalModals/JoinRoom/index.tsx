@@ -1,4 +1,4 @@
-import { Button, Text } from '@chakra-ui/react';
+import { Button, Text, useToast } from '@chakra-ui/react';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -10,6 +10,7 @@ import { useAppSelector } from '../../../../../utils/hooks/useAppSelector';
 
 const JoinRoomModal = () => {
   const { visible, data: roomId } = useAppSelector((state) => state.ui.modals.joinRoom);
+  const toast = useToast();
 
   const dispatch = useDispatch();
 
@@ -20,8 +21,11 @@ const JoinRoomModal = () => {
       .unwrap()
       .then(() => {
         dispatch(uiActions.closeModal('joinRoom'));
+      })
+      .catch(() => {
+        toast({ title: 'An error occurred', status: 'error' });
       });
-  }, [dispatch, joinRoomMutate, roomId]);
+  }, [dispatch, joinRoomMutate, roomId, toast]);
 
   if (!roomId) return null;
 

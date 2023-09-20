@@ -2,6 +2,7 @@ import { Box, Divider, Flex, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { AsyncFeedback } from '../../../../lib/components';
 import { IChatRoomWithUsers } from '../../../../lib/interfaces/chat';
 import { IUser } from '../../../../lib/interfaces/user';
 import chatApi from '../../../../services/api/chat';
@@ -16,13 +17,13 @@ const ChatRooms = () => {
 
   const dispatch = useDispatch();
 
-  const { data } = chatApi.useGetChatRoomsQuery();
+  const { data, isLoading, error } = chatApi.useGetChatRoomsQuery();
 
   const { notJoined, joined } = useMemo(() => {
     const joined: IChatRoomWithUsers[] = [];
     const notJoined: IChatRoomWithUsers[] = [];
 
-    data?.forEach((room, index) => {
+    data?.forEach((room) => {
       if (room.chatRoomUsers.some((roomUser) => roomUser.userId === (currentUser as IUser).id)) {
         joined.push(room);
       } else {
@@ -38,7 +39,7 @@ const ChatRooms = () => {
   }, [data]);
 
   return (
-    <>
+    <AsyncFeedback error={error} isLoading={isLoading} isEmpty={data?.length === 0}>
       <Box>
         <Flex alignItems="center" gap="1em" color="gray.400" mb="1em">
           <Text>Joined</Text>
@@ -77,7 +78,7 @@ const ChatRooms = () => {
           </VStack>
         ) : null}
       </Box>
-    </>
+    </AsyncFeedback>
   );
 };
 

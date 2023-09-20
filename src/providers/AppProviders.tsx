@@ -11,7 +11,9 @@ const AppProviders: FC<PropsWithChildren> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <StoreProvider store={store}>
-        <ChakraProvider>{children}</ChakraProvider>
+        <ChakraProvider toastOptions={{ defaultOptions: { position: 'top' } }}>
+          {children}
+        </ChakraProvider>
       </StoreProvider>
     </QueryClientProvider>
   );

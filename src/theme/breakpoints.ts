@@ -7,6 +7,6 @@ export const themeBreakPoints = {
 };
 
 export const mediaQueries = {
-  MOBILE: `(max-width: ${themeBreakPoints.lg})`,
-  ABOVE_MOBILE: `(min-width: ${themeBreakPoints.lg})`,
+  MOBILE: `(max-width: ${themeBreakPoints.md})`,
+  ABOVE_MOBILE: `(min-width: ${themeBreakPoints.md})`,
 };

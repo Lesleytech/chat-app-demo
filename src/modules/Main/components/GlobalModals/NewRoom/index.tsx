@@ -1,4 +1,4 @@
-import { Button, Input, Text } from '@chakra-ui/react';
+import { Button, Input, Text, useToast } from '@chakra-ui/react';
 import { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -9,6 +9,7 @@ import { useAppSelector } from '../../../../../utils/hooks/useAppSelector';
 
 const NewRoomModal = () => {
   const [roomName, setRoomName] = useState('');
+  const toast = useToast();
 
   const { visible } = useAppSelector((state) => state.ui.modals.newRoom);
 
@@ -20,17 +21,21 @@ const NewRoomModal = () => {
   const handleSubmit = useCallback(() => {
     if (!roomName) return; // In case I support submit with enter key later
 
-    createRoomMutate(roomName)
-      .unwrap()
-      .then((data) => {
-        joinRoomMutate(data.id)
-          .unwrap()
-          .then(() => {
-            setRoomName('');
-            dispatch(uiActions.closeModal('newRoom'));
-          });
-      });
-  }, [createRoomMutate, dispatch, joinRoomMutate, roomName]);
+    try {
+      createRoomMutate(roomName)
+        .unwrap()
+        .then((data) => {
+          joinRoomMutate(data.id)
+            .unwrap()
+            .then(() => {
+              setRoomName('');
+              dispatch(uiActions.closeModal('newRoom'));
+            });
+        });
+    } catch (e) {
+      toast({ title: 'An error occurred', status: 'error' });
+    }
+  }, [createRoomMutate, dispatch, joinRoomMutate, roomName, toast]);
 
   const isLoading = isCreateRoomLoading || isJoinRoomLoading;
 

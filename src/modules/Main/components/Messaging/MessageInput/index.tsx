@@ -4,6 +4,7 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  useToast,
 } from '@chakra-ui/react';
 import { FormEvent, useCallback, useState } from 'react';
 import { CgAttachment } from 'react-icons/cg';
@@ -13,6 +14,7 @@ import chatApi from '../../../../../services/api/chat';
 
 const MessageInput = () => {
   const [text, setText] = useState('');
+  const toast = useToast();
 
   const [createNewMsgMutate, { isLoading }] = chatApi.useCreateNewMessageMutation();
 
@@ -23,9 +25,12 @@ const MessageInput = () => {
         .unwrap()
         .then(() => {
           setText('');
+        })
+        .catch(() => {
+          toast({ title: 'An error occurred', status: 'error' });
         });
     },
-    [createNewMsgMutate, text],
+    [createNewMsgMutate, text, toast],
   );
 
   return (

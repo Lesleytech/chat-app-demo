@@ -4,8 +4,7 @@ import { useQuery } from 'react-query';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { UserAvatar } from '../../../../lib/components';
-import { UserAvatarSkeleton } from '../../../../lib/components/Skeletons';
+import { AsyncFeedback, UserAvatar } from '../../../../lib/components';
 import { IUser } from '../../../../lib/interfaces/user';
 import { getAllUsers } from '../../../../services/api/user';
 import { authActions } from '../../../../store/auth';
@@ -14,7 +13,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery('all-users', getAllUsers, { refetchOnMount: false });
+  const { data, isLoading, error } = useQuery('all-users', getAllUsers, { refetchOnMount: false });
 
   const handleLogin = useCallback(
     (user: IUser) => {
@@ -30,22 +29,20 @@ const LoginPage = () => {
         <Text fontSize="xl" fontWeight="bold" mb="1em" px="0.5em">
           Select a Test Account
         </Text>
-        {isLoading ? (
-          <UserAvatarSkeleton numItems={2} />
-        ) : data?.length ? (
-          <VStack alignItems="unset">
-            {data.map((user) => (
-              <UserAvatar
-                title={user.username}
-                subtitle={user.email}
-                key={user.id}
-                onClick={() => handleLogin(user)}
-              />
-            ))}
-          </VStack>
-        ) : (
-          <Text color="gray.500">No user accounts.</Text>
-        )}
+        {
+          <AsyncFeedback isLoading={isLoading} error={error} isEmpty={data?.length === 0}>
+            <VStack alignItems="unset">
+              {data?.map((user) => (
+                <UserAvatar
+                  title={user.username}
+                  subtitle={user.email}
+                  key={user.id}
+                  onClick={() => handleLogin(user)}
+                />
+              ))}
+            </VStack>
+          </AsyncFeedback>
+        }
       </CardBody>
     </Card>
   );
