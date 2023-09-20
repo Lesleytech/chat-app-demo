@@ -1,0 +1,229 @@
+{
+  "users": [
+    {
+      "id": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "username": "Carl Johnson",
+      "email": "carljohnson@example.com",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "id": "5b243881-1703-4944-ad25-1c4863896995",
+      "username": "Jane Doe",
+      "email": "janedoe@example.com",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    }
+  ],
+  "chatRooms": [
+    {
+      "id": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "name": "Code Heroes",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "id": "68f77768-7392-4136-a255-53bf8b2c81bd",
+      "name": "Way of Life",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "id": "d06c2e02-b3c4-425a-8f43-ea57fb32df43",
+      "name": "JS Developers",
+      "updatedAt": 1695239199,
+      "createdAt": 1695239199
+    },
+    {
+      "id": "ab12c7b6-00da-4472-a06e-859392828a26",
+      "name": "Backend Folks",
+      "updatedAt": 1695239288,
+      "createdAt": 1695239288
+    },
+    {
+      "id": "b42c077e-9bb5-4f18-9371-118ce44839c0",
+      "name": "Real Estate Lovers",
+      "updatedAt": 1695239322,
+      "createdAt": 1695239322
+    },
+    {
+      "id": "1669ed96-cf8c-4728-b4f2-a81665b97a66",
+      "name": "Gamers World 101",
+      "updatedAt": 1695239681,
+      "createdAt": 1695239681
+    },
+    {
+      "name": "Vintage Collectors",
+      "id": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "updatedAt": 1695240328,
+      "createdAt": 1695240328
+    },
+    {
+      "name": "The newest",
+      "id": "cc74dd8b-0d64-4c0d-ab26-1dae97385b07",
+      "updatedAt": 1695240554,
+      "createdAt": 1695240554
+    }
+  ],
+  "chatRoomUsers": [
+    {
+      "id": "5bbe7f03-7995-4e96-9dee-102cb604bbeb",
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "id": "df30e019-c0b0-432b-9c39-da95148f477e",
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "userId": "5b243881-1703-4944-ad25-1c4863896995",
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "chatRoomId": "cc74dd8b-0d64-4c0d-ab26-1dae97385b07",
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "c0d30e39-12f0-4815-87fe-84ec13b52079",
+      "updatedAt": 1695240554,
+      "createdAt": 1695240554
+    },
+    {
+      "chatRoomId": "1669ed96-cf8c-4728-b4f2-a81665b97a66",
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "55ddbded-c7f8-4b16-b4b7-9ed984002a01",
+      "updatedAt": 1695241917,
+      "createdAt": 1695241917
+    },
+    {
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "2cb090cc-2439-4491-8283-ffa923d71ff4",
+      "updatedAt": 1695241925,
+      "createdAt": 1695241925
+    },
+    {
+      "chatRoomId": "ab12c7b6-00da-4472-a06e-859392828a26",
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "4d3acf0c-a599-48c9-be5f-8d5f4e62f0c6",
+      "updatedAt": 1695241938,
+      "createdAt": 1695241938
+    },
+    {
+      "chatRoomId": "cc74dd8b-0d64-4c0d-ab26-1dae97385b07",
+      "userId": "5b243881-1703-4944-ad25-1c4863896995",
+      "id": "ba426173-4336-48d8-98f7-af6757ce3bd6",
+      "updatedAt": 1695243301,
+      "createdAt": 1695243301
+    }
+  ],
+  "messages": [
+    {
+      "userId": "5b243881-1703-4944-ad25-1c4863896995",
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "text": "Hello there, how are you today?",
+      "isMedia": false,
+      "ack": 1,
+      "createdAt": 1695159089,
+      "updatedAt": 1695159089
+    },
+    {
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "text": "I am okay! How are you?",
+      "isMedia": false,
+      "ack": 1,
+      "createdAt": 1695160226,
+      "updatedAt": 1695160226
+    },
+    {
+      "text": "Hola",
+      "ack": 1,
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "f19d0c4f-488c-4071-9611-49e361b71225",
+      "updatedAt": 1695242998,
+      "createdAt": 1695242998
+    },
+    {
+      "text": "It's a new world innit",
+      "ack": 1,
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "aa459d1d-d43e-4442-8d16-aa594da0fb05",
+      "updatedAt": 1695243010,
+      "createdAt": 1695243010
+    },
+    {
+      "text": "Just have the best time you possibly can",
+      "ack": 1,
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "ad17b74d-4981-489b-a2e2-5a95ed577555",
+      "updatedAt": 1695243058,
+      "createdAt": 1695243058
+    },
+    {
+      "text": "Seems like it works",
+      "ack": 1,
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "2042d7e9-f2d1-4679-aa85-f6401100508c",
+      "updatedAt": 1695243075,
+      "createdAt": 1695243075
+    },
+    {
+      "text": "Test ",
+      "ack": 1,
+      "chatRoomId": "47ff93be-afd5-4e25-85d6-c79d56ae55ca",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "696fee8b-efc1-4b65-849f-cc41d77e4b8f",
+      "updatedAt": 1695243118,
+      "createdAt": 1695243118
+    },
+    {
+      "text": "The newest group here",
+      "ack": 1,
+      "chatRoomId": "cc74dd8b-0d64-4c0d-ab26-1dae97385b07",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "d0180bb9-f1d4-4177-970a-2e103efc46da",
+      "updatedAt": 1695243149,
+      "createdAt": 1695243149
+    },
+    {
+      "text": "New message here",
+      "ack": 1,
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "isMedia": false,
+      "userId": "5b243881-1703-4944-ad25-1c4863896995",
+      "id": "eaa3c0d8-b3c5-499e-90d1-8096780a6099",
+      "updatedAt": 1695243247,
+      "createdAt": 1695243247
+    },
+    {
+      "text": "That's right innit",
+      "ack": 1,
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "isMedia": false,
+      "userId": "ffbb3d3b-a0f1-4ede-ae28-6e6e6ddab32b",
+      "id": "ad958ae4-a901-4d07-9c0f-79c1be94f193",
+      "updatedAt": 1695243267,
+      "createdAt": 1695243267
+    },
+    {
+      "text": "Yup",
+      "ack": 1,
+      "chatRoomId": "edaaa88a-6394-4f5a-8019-7bd82231fb29",
+      "isMedia": false,
+      "userId": "5b243881-1703-4944-ad25-1c4863896995",
+      "id": "a733d681-a798-4b37-a685-d41eac1cf304",
+      "updatedAt": 1695243272,
+      "createdAt": 1695243272
+    }
+  ]
+}
